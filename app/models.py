@@ -39,4 +39,4 @@ class DistrictData(models.Model):
         db_table = 'districts_data'
 
     def __str__(self):
-        return f'{self.district.name} + {self.period}'
+        return f'{self.district.name} + {self.day} + {self.period}'
