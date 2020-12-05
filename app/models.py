@@ -27,7 +27,7 @@ class District(models.Model):
 
 
 class DistrictData(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(blank=True, null=True)
     day = models.CharField(max_length=100)
     period = models.TextField()
     district = models.ForeignKey(District, on_delete=models.CASCADE)
