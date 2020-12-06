@@ -27,7 +27,7 @@ class DistrictDataListAPIView(ListAPIView):
         if self.request.GET.get('day'):
             data = data.filter(day=self.request.GET.get('day'))
         if self.request.GET.get('period'):
-            data = data.filter(day=self.request.GET.get('period'))
+            data = data.filter(period=self.request.GET.get('period'))
         return data
 
 
