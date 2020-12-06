@@ -23,7 +23,12 @@ class DistrictDataListAPIView(ListAPIView):
     serializer_class = DistrictDataSerializer
 
     def get_queryset(self):
-        return DistrictData.objects.all()
+        data = DistrictData.objects.all()
+        if self.request.GET.get('day'):
+            data = data.filter(day=self.request.GET.get('day'))
+        if self.request.GET.get('period'):
+            data = data.filter(day=self.request.GET.get('period'))
+        return data
 
 
 class SingleDistrictDataListAPIView(APIView):
